@@ -20,4 +20,7 @@ class Img {
 
   //Language
   static String langStrip = 'assets/images/langstrip.png';
+
+  //User details
+  static String user = "assets/images/user.png";
 }

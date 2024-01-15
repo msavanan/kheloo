@@ -9,4 +9,9 @@ class AppColors {
   //Language stripe
   static Color languageStripe = const Color(0xff71009f);
   static Color alertLang = const Color(0xff333333);
+
+  //LiveWithdrwal
+  static Color liveWithdrawal = const Color(0xffd07909);
+  static Color avatarColor = const Color(0xffd57f23);
+  static Color userGroupBorderColor = const Color(0xffc8b683);
 }

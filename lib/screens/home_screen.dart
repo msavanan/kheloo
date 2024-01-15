@@ -5,6 +5,7 @@ import 'package:kheloo/utlis/bottom_bar.dart';
 import 'package:kheloo/utlis/carousel.dart';
 import 'package:kheloo/utlis/jackpot.dart';
 import 'package:kheloo/utlis/language_selector.dart';
+import 'package:kheloo/utlis/user_list.dart';
 import 'package:vimeo_video_player/vimeo_video_player.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -24,6 +25,7 @@ class HomeScreen extends StatelessWidget {
             CarouselWidget(),
             LanguageSelector(),
             JackPotNumber(),
+            UserList(),
             VimeoVideoPlayer(
               url: 'https://player.vimeo.com/video/759401631?h=27f2be5876',
             ),
