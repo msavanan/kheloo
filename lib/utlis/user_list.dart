@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kheloo/const/colors.dart';
 import 'package:kheloo/const/img.dart';
+import 'package:kheloo/utlis/gradient_text.dart';
 
 class UserList extends StatelessWidget {
   const UserList({super.key});
@@ -9,9 +10,17 @@ class UserList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(
+        GradientText(
           "LIVE WITHDRAWAL",
-          style: TextStyle(fontSize: 28, color: AppColors.liveWithdrawal),
+          style: TextStyle(
+            fontSize: 28,
+            color: AppColors.gamesTitleColor,
+          ),
+          gradient: const LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              stops: [0, 0.5],
+              colors: [Color(0xfff08f0f), Color(0xffc8b683)]),
         ),
         Container(
           height: 10,
@@ -66,7 +75,7 @@ class UserGroup extends StatelessWidget {
               children: [
                 UserDetails(name: 'Kahana', amount: '21,345', seconds: '8'),
                 Container(width: 24),
-                UserDetails(name: 'Anika', amount: '31,462', seconds: '6')
+                UserDetails(name: 'Prank', amount: '31,462', seconds: '6')
               ],
             ),
           ),

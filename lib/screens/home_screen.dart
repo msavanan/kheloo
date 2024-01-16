@@ -28,13 +28,13 @@ class HomeScreen extends StatelessWidget {
               const LanguageSelector(),
               const JackPotNumber(),
               const UserList(),
-              // Container(
-              //   color: AppColors.appBarColor,
-              //   height: 250,
-              //   child: const VimeoPlayer(
-              //     videoId: '759401631',
-              //   ),
-              // ),
+              Container(
+                color: AppColors.appBarColor,
+                height: 250,
+                child: const VimeoPlayer(
+                  videoId: '759401631',
+                ),
+              ),
               Games(),
             ],
           ),

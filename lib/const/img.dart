@@ -39,4 +39,26 @@ class Img {
   //playtech games
   static String playtech1 = "assets/images/playtech1.png";
   static String playtech2 = "assets/images/playtech2.png";
+
+  //roulette
+  static String roulette1 = "assets/images/roulette1.png";
+  static String roulette2 = "assets/images/roulette2.png";
+  static String roulette3 = "assets/images/roulette3.png";
+  static String roulette4 = "assets/images/roulette4.png";
+
+  //blackjack
+  static String blacjack1 = "assets/images/blackjack1.png";
+  static String blacjack2 = "assets/images/blackjack2.png";
+
+  //dealer
+  static String dealer1 = "assets/images/dealer1.png";
+  static String dealer2 = "assets/images/dealer2.png";
+  static String dealer3 = "assets/images/dealer3.png";
+  static String dealer4 = "assets/images/dealer4.png";
+
+  //Baccarat
+  static String baccarat1 = "assets/images/baccarat1.png";
+  static String baccarat2 = "assets/images/baccarat2.png";
+  static String baccarat3 = "assets/images/baccarat3.png";
+  static String baccarat4 = "assets/images/baccarat4.png";
 }
