@@ -8,38 +8,110 @@ class CustomBottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 60,
+      height: 90,
       decoration: BoxDecoration(
-          gradient: LinearGradient(
-        begin: Alignment.topRight,
-        end: Alignment.bottomLeft,
-        stops: const [0, 0.5],
-        colors: [
-          AppColors.loginColor1,
-          AppColors.loginColor,
-        ],
-      )),
+        gradient: LinearGradient(
+          begin: Alignment.topRight,
+          end: Alignment.bottomLeft,
+          stops: const [0, 0.5],
+          colors: [
+            AppColors.loginColor1,
+            AppColors.loginColor,
+          ],
+        ),
+      ),
       // child: Container(
       //   child: CustomPaint(
-      //     size: Size(MediaQuery.of(context).size.width, 60),
+      //     size: Size(MediaQuery.of(context).size.width, 90),
       //     painter: const Trapezium(),
       //   ),
       // )
-      child: Row(
+      child: Stack(
         children: [
-          BottomBarButton(
-              img: Img.support, name: "Support", imgColor: Colors.white),
-          const Spacer(),
-          BottomBarButton(
-              img: Img.sports, name: "Sports", imgColor: AppColors.loginColor),
-          const Spacer(),
-          BottomBarButton(
-              img: Img.casino,
-              name: "Live Casino",
-              imgColor: AppColors.loginColor),
-          const Spacer(),
-          BottomBarButton(
-              img: Img.register, name: "Register", imgColor: Colors.white),
+          Container(
+            child: CustomPaint(
+              size: Size(MediaQuery.of(context).size.width, 90),
+              painter: const Trapezium(),
+            ),
+          ),
+          Row(
+            children: [
+              Container(
+                width: 19,
+              ),
+              BottomBarButton(
+                  img: Img.support, name: "Support", imgColor: Colors.white),
+              const Spacer(),
+              Container(
+                width: (MediaQuery.of(context).size.width / 2) - 30,
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      Container(
+                        width: 15,
+                      ),
+                      BottomBarButton(
+                          img: Img.sports,
+                          name: "Sports",
+                          imgColor: AppColors.loginColor),
+                      Container(
+                        width: 30,
+                      ),
+                      BottomBarButton(
+                          img: Img.casino,
+                          name: "Live Casino",
+                          imgColor: AppColors.loginColor),
+                      Container(
+                        width: 30,
+                      ),
+                      BottomBarButton(
+                          img: Img.esports,
+                          name: "E-Sports",
+                          imgColor: AppColors.loginColor),
+                      Container(
+                        width: 30,
+                      ),
+                      BottomBarButton(
+                          img: Img.slots,
+                          name: "Slots",
+                          imgColor: AppColors.loginColor),
+                      Container(
+                        width: 30,
+                      ),
+                      BottomBarButton(
+                          img: Img.lottery,
+                          name: "Lottery",
+                          imgColor: AppColors.loginColor),
+                      Container(
+                        width: 30,
+                      ),
+                      BottomBarButton(
+                          img: Img.tableGames,
+                          name: "Table Games",
+                          imgColor: AppColors.loginColor),
+                      Container(
+                        width: 30,
+                      ),
+                      BottomBarButton(
+                          img: Img.poker,
+                          name: "Poker",
+                          imgColor: AppColors.loginColor),
+                      Container(
+                        width: 30,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Spacer(),
+              BottomBarButton(
+                  img: Img.register, name: "Register", imgColor: Colors.white),
+              Container(
+                width: 19,
+              ),
+            ],
+          ),
         ],
       ),
     );
@@ -63,6 +135,7 @@ class BottomBarButton extends StatelessWidget {
         print("$name button pressed");
       },
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image.asset(
             img,
@@ -70,7 +143,14 @@ class BottomBarButton extends StatelessWidget {
             height: 30,
             color: imgColor,
           ),
-          Text(name, style: const TextStyle(fontSize: 12, color: Colors.white))
+          Container(
+            height: 5,
+          ),
+          Text(name,
+              style: const TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white))
         ],
       ),
     );
@@ -85,25 +165,58 @@ class Trapezium extends CustomPainter {
     var paint = Paint()..color = Colors.black;
 
     var path = Path()
-      ..moveTo(size.width / 4, 0)
-      // ..relativeLineTo(0, size.height)
-      // ..relativeLineTo(50 - (size.width / 2), 0)
-      // ..relativeLineTo(50, -size.height)
+      ..moveTo((size.width / 4) - 15, 0)
+      ..lineTo((size.width / 4) + 15, size.height)
+      ..lineTo((size.width * (3 / 4)) - 15, size.height)
+      ..lineTo((size.width * (3 / 4)) + 15, 0)
       ..close();
 
     paint.style = PaintingStyle.fill;
 
-    canvas.drawLine(
-        Offset(size.width / 4, 0), Offset(size.width / 4, size.height), paint);
-    canvas.drawLine(
-        Offset(size.width / 4, 0), Offset(size.width / 3, 0), paint);
-    canvas.drawLine(
-        Offset(size.width / 3, 0), Offset(size.width / 3, size.height), paint);
-    canvas.drawLine(Offset(size.width / 4, size.height),
-        Offset(size.width / 3, size.height), paint);
-    //canvas.drawPath(path, paint);
+    canvas.drawPath(path, paint);
 
-    //canvas.drawCircle(Offset(size.width / 2, size.height / 2), 10, paint);
+    // canvas.drawCircle(Offset(size.width / 2, size.height / 2), 10, paint);
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) {
+    return true;
+  }
+}
+
+class RPSCustomPainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    // Layer 1
+
+    Paint paint_fill_0 = Paint()
+      ..color = const Color.fromARGB(255, 255, 255, 255)
+      ..style = PaintingStyle.fill
+      ..strokeWidth = size.width * 0.00
+      ..strokeCap = StrokeCap.butt
+      ..strokeJoin = StrokeJoin.miter;
+
+    Path path_0 = Path();
+    path_0.moveTo(size.width * 0.2475000, size.height * 0.2020000);
+    path_0.lineTo(size.width * 0.6262500, size.height * 0.2000000);
+    path_0.lineTo(size.width * 0.6262500, size.height * 0.2000000);
+    path_0.lineTo(size.width * 0.5600000, size.height * 0.3980000);
+    path_0.lineTo(size.width * 0.3112500, size.height * 0.4000000);
+    path_0.lineTo(size.width * 0.2475000, size.height * 0.2020000);
+    path_0.close();
+
+    canvas.drawPath(path_0, paint_fill_0);
+
+    // Layer 1
+
+    Paint paint_stroke_0 = Paint()
+      ..color = const Color.fromARGB(255, 33, 150, 243)
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = size.width * 0.00
+      ..strokeCap = StrokeCap.butt
+      ..strokeJoin = StrokeJoin.miter;
+
+    canvas.drawPath(path_0, paint_stroke_0);
   }
 
   @override

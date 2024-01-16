@@ -164,6 +164,7 @@ class SelectLang extends StatelessWidget {
     return InkWell(
       onTap: () {
         print("$langName tapped");
+        Navigator.of(context).pop();
       },
       child: Container(
         decoration: BoxDecoration(

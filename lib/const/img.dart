@@ -8,6 +8,11 @@ class Img {
   static String support = "assets/images/promotion_footer.png";
   static String sports = "assets/images/sports-new.png";
   static String register = "assets/images/register_footer.png";
+  static String poker = "assets/images/Poker.png";
+  static String tableGames = "assets/images/Dice.png";
+  static String lottery = "assets/images/Lottery.png";
+  static String slots = "assets/images/777.png";
+  static String esports = "assets/images/Football.png";
 
   //Banner
   static String banner1 = "assets/images/banner1.png";
@@ -23,4 +28,15 @@ class Img {
 
   //User details
   static String user = "assets/images/user.png";
+
+  //Most popular Games
+  static String mpGames1 = "assets/images/popular_game1.png";
+  static String mpGames2 = "assets/images/popular_game2.png";
+  static String mpGames3 = "assets/images/popular_game3.png";
+  static String mpGames4 = "assets/images/popular_game4.png";
+  static String topBanner = "assets/images/top_banner_1.png";
+
+  //playtech games
+  static String playtech1 = "assets/images/playtech1.png";
+  static String playtech2 = "assets/images/playtech2.png";
 }

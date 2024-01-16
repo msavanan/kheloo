@@ -14,4 +14,8 @@ class AppColors {
   static Color liveWithdrawal = const Color(0xffd07909);
   static Color avatarColor = const Color(0xffd57f23);
   static Color userGroupBorderColor = const Color(0xffc8b683);
+
+  //Games
+  static Color gamesTitleColor = const Color(0xffd07909);
+  static Color gameBanner = const Color(0xff5a0069);
 }
